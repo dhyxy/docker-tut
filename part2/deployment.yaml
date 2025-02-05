@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: part2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: part2
+  template:
+    metadata:
+      labels:
+        app: part2
+    spec:
+      containers:
+        - name: part2
+          image: dhyeyl/part2:latest
+          ports:
+            - containerPort: 8000
